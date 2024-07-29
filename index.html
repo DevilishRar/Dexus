@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlantis</title>
+    <title>Atlantis - Roblox Executor</title>
     <link rel="icon" href="https://cdn.discordapp.com/icons/1150872929731620987/e07490a56175793f93a84fcb5376bec2.webp?size=96" type="image/webp">
     <meta property="og:title" content="Atlantis (1# UD)">
     <meta property="og:description" content="Unleash havoc with the best scripting experience.">
@@ -22,13 +22,15 @@
             --accent-color: #e3342f;
             --light-gray: #d3d3d3;
             --navbar-width: 80%;
-            --navbar-spacing: 2rem;
-            --spacing: 4rem;
-            --services-spacing: 5rem;
+            --navbar-spacing: 3.5rem;
+            --main-content-spacing: 8rem;
+            --screenshot-spacing: 4rem;
+            --services-spacing: 6rem;
             --vision-spacing: 6rem;
             --star-color: #ffffff;
             --star-glow-color: #ffffff;
             --star-count: 75;
+            --screenshot-width: 90%;
         }
 
         body {
@@ -56,7 +58,7 @@
             align-items: center;
             transition: background-color 0.3s;
             z-index: 3;
-            border-radius: 1.9rem;
+            border-radius: 1rem;
         }
 
         .navbar-center {
@@ -98,8 +100,12 @@
             margin-bottom: var(--navbar-spacing);
         }
 
-        .spacing {
-            margin-bottom: var(--spacing);
+        .main-content-spacing {
+            margin-bottom: var(--main-content-spacing);
+        }
+
+        .screenshot-spacing {
+            margin-bottom: var(--screenshot-spacing);
         }
 
         .services-spacing {
@@ -162,6 +168,10 @@
             pointer-events: none;
             z-index: 1;
         }
+
+        .showcase-img {
+            width: var(--screenshot-width);
+        }
     </style>
 </head>
 <body class="fade-in">
@@ -181,7 +191,7 @@
         <a href="https://discord.gg/hDwPsdka2V" class="btn-contact">Contact Us</a>
     </nav>
 
-    <section class="flex flex-col md:flex-row items-center py-20 px-6 spacing" style="position: relative; z-index: 2;">
+    <section class="flex flex-col md:flex-row items-center py-20 px-6 main-content-spacing" style="position: relative; z-index: 2;">
         <div class="text-center md:text-left md:w-1/2 mb-6 md:mb-0">
             <h1 class="text-4xl font-bold mb-4">A Roblox Executor for Safe and Efficient Script Execution</h1>
             <p class="text-xl mb-6 description" style="color: var(--light-gray);">With bypassed Hyperon 5.0, safe injections, and a supportive community, Atlantis offers top-notch moderation and script execution.</p>
@@ -189,8 +199,8 @@
                 <a href="https://discord.gg/hDwPsdka2V" class="bg-red-600 text-white px-6 py-2 rounded-full mr-4">Get Now</a>
             </div>
         </div>
-        <div class="md:w-1/2 flex justify-center">
-            <img src="https://media.discordapp.net/attachments/1223176100822253648/1267117746051874910/image.png?ex=66a79edc&is=66a64d5c&hm=727405da4f14963f010fd62094a768e0fbaca844fd67b2fd19befff83069a75f&=&format=webp&quality=lossless" alt="Roblox Executor Interface" class="rounded-lg" style="z-index: 2;">
+        <div class="md:w-1/2 flex justify-center showcase-spacing">
+            <img src="https://media.discordapp.net/attachments/1223176100822253648/1267117746051874910/image.png?ex=66a79edc&is=66a64d5c&hm=727405da4f14963f010fd62094a768e0fbaca844fd67b2fd19befff83069a75f&=&format=webp&quality=lossless" alt="Roblox Executor Interface" class="rounded-lg showcase-img" style="z-index: 2;">
         </div>
     </section>
 
@@ -250,7 +260,8 @@
             const sections = document.querySelectorAll('section');
             const navbarWidth = navbar.offsetWidth;
             const navbarSpacing = getComputedStyle(document.documentElement).getPropertyValue('--navbar-spacing');
-            const spacing = getComputedStyle(document.documentElement).getPropertyValue('--spacing');
+            const mainContentSpacing = getComputedStyle(document.documentElement).getPropertyValue('--main-content-spacing');
+            const screenshotSpacing = getComputedStyle(document.documentElement).getPropertyValue('--screenshot-spacing');
             const servicesSpacing = getComputedStyle(document.documentElement).getPropertyValue('--services-spacing');
             const visionSpacing = getComputedStyle(document.documentElement).getPropertyValue('--vision-spacing');
 
@@ -260,7 +271,8 @@
             });
 
             document.querySelector('.navbar-spacing').style.marginBottom = navbarSpacing;
-            document.querySelector('.spacing').style.marginBottom = spacing;
+            document.querySelector('.main-content-spacing').style.marginBottom = mainContentSpacing;
+            document.querySelector('.showcase-spacing').style.marginBottom = screenshotSpacing;
             document.querySelector('.services-spacing').style.marginBottom = servicesSpacing;
             document.querySelector('.vision-spacing').style.marginBottom = visionSpacing;
         }
@@ -283,8 +295,8 @@
             for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
-                star.style.width = "3.4px";
-                star.style.height = "3.4px";
+                star.style.width = "3.7px";
+                star.style.height = "3.7px";
 
                 let isValidPosition = false;
                 while (!isValidPosition) {
