@@ -173,6 +173,55 @@
         .showcase-img {
             width: var(--screenshot-width);
         }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            #navbar-menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--secondary-color);
+                width: 100%;
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            #navbar-toggle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .navbar-center {
+                display: none;
+            }
+
+            .navbar {
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar-center {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+
+            .navbar a {
+                margin: 0.5rem 0;
+            }
+
+            .main-content-spacing, .screenshot-spacing, .services-spacing, .vision-spacing {
+                margin-bottom: 2rem;
+            }
+        }
     </style>
 </head>
 <body class="fade-in">
@@ -185,11 +234,20 @@
             <img src="https://cdn.discordapp.com/icons/1150872929731620987/e07490a56175793f93a84fcb5376bec2.webp?size=96" alt="Atlantis Logo" class="h-10 w-10 rounded-full">
             <span class="ml-2 text-2xl font-bold">Atlantis</span>
         </div>
-        <div class="navbar-center">
+        <div class="navbar-center hidden lg:flex">
             <a href="#">Home</a>
             <a href="#services">Services</a>
         </div>
-        <a href="https://discord.gg/hDwPsdka2V" class="btn-contact">Contact Us</a>
+        <button class="lg:hidden flex flex-col space-y-1" id="navbar-toggle">
+            <span class="block h-1 w-6 bg-white"></span>
+            <span class="block h-1 w-6 bg-white"></span>
+            <span class="block h-1 w-6 bg-white"></span>
+        </button>
+        <div class="hidden flex-col items-center space-y-3 lg:hidden" id="navbar-menu">
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="https://discord.gg/hDwPsdka2V" class="btn-contact">Contact Us</a>
+        </div>
     </nav>
 
     <section class="flex flex-col md:flex-row items-center py-20 px-6 main-content-spacing" style="position: relative; z-index: 2;">
@@ -239,7 +297,7 @@
                 <div class="text-center service-card">
                     <i class="fas fa-rocket fa-3x text-red-600 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">High Performance</h3>
-                    <p class="description" style="color: var(--light-gray);">Atlantis provides high performance script execution for all your needs.</p>
+                    <p class="description" style="color: var (--light-gray);">Atlantis provides high performance script execution for all your needs.</p>
                 </div>
             </div>
         </div>
@@ -327,6 +385,15 @@
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', smoothScroll);
+        });
+
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('navbar-menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
         });
 
         window.addEventListener('resize', adjustLayout);
