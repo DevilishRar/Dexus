@@ -68,6 +68,10 @@
             flex-grow: 1;
         }
 
+        .navbar-right {
+            margin-left: auto;
+        }
+
         .navbar a {
             color: white;
             margin: 0 1rem;
@@ -200,6 +204,10 @@
             .navbar {
                 justify-content: space-between;
             }
+
+            .navbar-right {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -237,6 +245,9 @@
         <div class="navbar-center hidden lg:flex">
             <a href="#">Home</a>
             <a href="#services">Services</a>
+        </div>
+        <div class="navbar-right hidden lg:flex">
+            <a href="https://discord.gg/hDwPsdka2V" class="btn-contact">Contact Us</a>
         </div>
         <button class="lg:hidden flex flex-col space-y-1" id="navbar-toggle">
             <span class="block h-1 w-6 bg-white"></span>
@@ -297,7 +308,7 @@
                 <div class="text-center service-card">
                     <i class="fas fa-rocket fa-3x text-red-600 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">High Performance</h3>
-                    <p class="description" style="color: var (--light-gray);">Atlantis provides high performance script execution for all your needs.</p>
+                    <p class="description" style="color: var(--light-gray);">Atlantis provides high performance script execution for all your needs.</p>
                 </div>
             </div>
         </div>
