@@ -277,51 +277,6 @@
         margin-bottom: 10px;
     }
 
-    .contributors {
-        background: #1a1a1a;
-        padding: 20px;
-        margin: 40px auto;
-        width: 600px;
-        text-align: center;
-        border: 1px solid #666;
-        border-radius: 20px;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .contributors h3 {
-        font-size: 1.5rem;
-        color: #ff0040;
-        font-family: 'Raleway', sans-serif;
-        margin-bottom: 10px;
-        text-shadow: 0px 0px 5px #ff0040;
-    }
-
-    .contributors-list {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .contributors-list .user-name {
-        font-size: 1.125rem;
-        color: #ccc;
-    }
-
-    .contributors-list .showcase-button {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #1a1a1a;
-        color: #ff0040;
-        border-radius: 8px;
-        border: 1px solid #666;
-        cursor: pointer;
-        transition: background 0.3s;
-    }
-
     .showcase-content {
         width: 600px;
         height: 350px;
@@ -403,15 +358,6 @@
     </div>
   </section>
 
-  <section class="contributors">
-    <h3>Contributors</h3>
-    <div class="contributors-list">
-      <div class="showcase-button"><i class="fas fa-chevron-left"></i></div>
-      <span class="user-name">Contributor 1</span>
-      <div class="showcase-button"><i class="fas fa-chevron-right"></i></div>
-    </div>
-  </section>
-
   <script>
     document.querySelector('.hero-image').addEventListener('mousemove', function(e) {
         const rect = e.target.getBoundingClientRect();
@@ -451,17 +397,6 @@
 
     addBackgroundElements('glow-star', 70);
     addBackgroundElements('glow-sphere', 10);
-
-    const contributors = ["Contributor 1", "Contributor 2", "Contributor 3", "Contributor 4"];
-    let currentContributorIndex = 0;
-
-    function updateContributor(direction) {
-        currentContributorIndex = (currentContributorIndex + direction + contributors.length) % contributors.length;
-        document.querySelector('.user-name').textContent = contributors[currentContributorIndex];
-    }
-
-    document.querySelector('.contributors .fa-chevron-left').onclick = () => updateContributor(-1);
-    document.querySelector('.contributors .fa-chevron-right').onclick = () => updateContributor(1);
   </script>
 </body>
 </html>
