@@ -14,405 +14,454 @@
     <meta property="og:site_name" content="Atlantis">
     <meta name="twitter:image:alt" content="Atlantis Logo">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #1a1a1a;
-            --accent-color: #e3342f;
-            --light-gray: #d3d3d3;
-            --navbar-width: 80%;
-            --navbar-spacing: 5.5rem;
-            --main-content-spacing: 15rem;
-            --screenshot-spacing: 4rem;
-            --services-spacing: 5rem;
-            --vision-spacing: 6rem;
-            --star-color: #ffffff;
-            --star-glow-color: #ffffff;
-            --star-count: 70;
-            --screenshot-width: 90%;
-        }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap">
+  <style>
+    body {
+        background-color: #000;
+        color: #e0e0e0;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: #ff0040 #222;
+    }
 
-        body {
-            background-color: var(--primary-color);
-            color: white;
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            font-weight: bold;
-            overflow-x: hidden;
-        }
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
 
-        ::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-        }
+    ::-webkit-scrollbar-track {
+        background: #222;
+    }
 
-        .navbar {
-            width: var(--navbar-width);
-            margin: 0 auto;
-            padding: 1rem;
-            background-color: var(--secondary-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s;
-            z-index: 3;
-            border-radius: 1rem;
-        }
+    ::-webkit-scrollbar-thumb {
+        background-color: #ff0040;
+        border-radius: 4px;
+    }
 
-        .navbar-center {
-            display: flex;
-            justify-content: center;
-            flex-grow: 1;
-        }
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 8px 20px;
+        border-radius: 20px;
+        width: 80%;
+        margin: 20px auto;
+        justify-content: space-between;
+    }
 
-        .navbar-right {
-            margin-left: auto;
-        }
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+    }
 
-        .navbar a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
-            font-size: 1.25rem;
-        }
+    .navbar-logo img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
 
-        .navbar a:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
-        }
+    .navbar-logo-text {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.5rem;
+        color: #ff0040;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
 
-        .btn-contact {
-            border: 1px solid white;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            text-decoration: none;
-            color: white;
-            font-size: 1.25rem;
-            transition: background-color 0.3s, transform 0.3s;
-        }
+    .navbar-links {
+        display: flex;
+        align-items: center;
+    }
 
-        .btn-contact:hover {
-            background-color: var(--accent-color);
-            transform: scale(1.1);
-            color: white;
-        }
+    .navbar-links a {
+        color: #ffffff;
+        margin-right: 20px;
+        font-weight: 600;
+        transition: color 0.3s;
+        cursor: pointer;
+    }
 
-        .navbar-spacing {
-            margin-bottom: var(--navbar-spacing);
-        }
+    .navbar-links a:hover {
+        color: #ff0040;
+    }
 
-        .main-content-spacing {
-            margin-bottom: var(--main-content-spacing);
-        }
+    .discord-button {
+        background-color: #7289da;
+        color: #ffffff;
+        padding: 8px 15px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        transition: background 0.3s, transform 0.3s;
+    }
 
-        .screenshot-spacing {
-            margin-bottom: var(--screenshot-spacing);
-        }
+    .discord-button:hover {
+        background-color: #5a78f1;
+        transform: scale(1.05);
+    }
 
-        .services-spacing {
-            margin-bottom: var(--services-spacing);
-        }
+    .update-banner {
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 20px;
+        background: rgba(255, 0, 0, 0.1);
+        color: #fff;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+        animation: banner-glow 3s ease-in-out infinite alternate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .vision-spacing {
-            margin-bottom: var(--vision-spacing);
-        }
+    .update-banner .close-btn {
+        margin-left: 10px;
+        cursor: pointer;
+        font-weight: bold;
+    }
 
-        .service-card {
-            background-color: var(--secondary-color);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            transition: transform 0.3s;
-            font-size: 1.25rem;
-            z-index: 2;
-        }
+    @keyframes banner-glow {
+        from { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); }
+        to { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4); }
+    }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        gap: 20px;
+        position: relative;
+    }
 
-        .fade-in {
-            animation: fadeIn 1.5s;
-        }
+    .hero-content {
+        max-width: 500px;
+        text-align: left;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #ffffff;
+        line-height: 1.2;
+    }
 
-        .star {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: var(--star-color);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--star-glow-color);
-            animation: twinkle 2s infinite alternate;
-            z-index: 1;
-        }
+    .hero h1 span {
+        color: #ff0040;
+        text-shadow: 0px 0px 10px #ff0040;
+    }
 
-        @keyframes twinkle {
-            0% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
+    .hero p {
+        color: #e0e0e0;
+        font-size: 1rem;
+        margin-top: 15px;
+    }
 
-        .description {
-            font-family: Arial, sans-serif;
-            font-weight: normal;
-        }
+    .hero button {
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 30px;
+        background: rgba(255, 0, 0, 0.3);
+        border: 1px solid #666;
+        color: #fff;
+        transition: all 0.3s;
+    }
 
-        #stars-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
+    .hero button:hover {
+        background: rgba(255, 0, 0, 0.5);
+        border-color: rgba(255, 0, 0, 0.7);
+    }
 
-        .showcase-img {
-            width: var(--screenshot-width);
-        }
+    .hero-image {
+        width: 450px;
+        height: 350px;
+        background-image: url('https://placehold.co/450x350');
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        transform-style: preserve-3d;
+    }
 
-        /* Responsive Styles */
-        @media (max-width: 1024px) {
-            #navbar-menu {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                background-color: var(--secondary-color);
-                width: 100%;
-                padding: 1rem;
-                border-radius: 0.5rem;
-            }
+    .hero-image:hover {
+        box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.5);
+        transform: rotateY(calc(var(--mouse-x, 0) * 15deg)) rotateX(calc(var(--mouse-y, 0) * -15deg));
+    }
 
-            #navbar-toggle {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                cursor: pointer;
-            }
+    .red-divider {
+        width: 80%;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1) 20%, rgba(255, 0, 0, 1) 80%, rgba(255, 0, 0, 0));
+        margin: 0 auto 40px;
+    }
 
-            .navbar-center {
-                display: none;
-            }
+    .cta {
+        background: linear-gradient(to bottom, #1a1a1a, #000);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 50px 20px;
+        margin: 40px auto;
+        max-width: 700px;
+        border-radius: 30px;
+        color: #e0e0e0;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
 
-            .navbar {
-                justify-content: space-between;
-            }
+    .cta h2 {
+        font-size: 2rem;
+        font-family: 'Raleway', sans-serif;
+        color: #ff0040;
+        font-weight: 900;
+        text-shadow: 0px 0px 5px #ff0040;
+    }
 
-            .navbar-right {
-                display: none;
-            }
-        }
+    .cta p {
+        font-size: 1.125rem;
+        color: #cccccc;
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
 
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-            }
+    .cta button {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #666;
+        padding: 12px 30px;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 30px;
+        transition: all 0.3s;
+    }
 
-            .navbar-center {
-                flex-direction: column;
-                text-align: center;
-                width: 100%;
-            }
+    .cta button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+    }
 
-            .navbar a {
-                margin: 0.5rem 0;
-            }
+    .features {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 40px auto;
+        padding: 20px;
+    }
 
-            .main-content-spacing, .screenshot-spacing, .services-spacing, .vision-spacing {
-                margin-bottom: 2rem;
-            }
-        }
-    </style>
+    .feature-card {
+        width: 300px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .feature-card h3 {
+        color: #ff0040;
+        font-size: 1.25rem;
+        font-family: 'Raleway', sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .contributors {
+        background: #1a1a1a;
+        padding: 20px;
+        margin: 40px auto;
+        width: 600px;
+        text-align: center;
+        border: 1px solid #666;
+        border-radius: 20px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .contributors h3 {
+        font-size: 1.5rem;
+        color: #ff0040;
+        font-family: 'Raleway', sans-serif;
+        margin-bottom: 10px;
+        text-shadow: 0px 0px 5px #ff0040;
+    }
+
+    .contributors-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contributors-list .user-name {
+        font-size: 1.125rem;
+        color: #ccc;
+    }
+
+    .contributors-list .showcase-button {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1a1a1a;
+        color: #ff0040;
+        border-radius: 8px;
+        border: 1px solid #666;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .showcase-content {
+        width: 600px;
+        height: 350px;
+        background-color: #333;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid #666;
+    }
+
+    .video-player {
+        width: 100%;
+        height: 100%;
+    }
+
+    .glow-star, .glow-sphere {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+  </style>
 </head>
-<body class="fade-in">
+<body>
 
-    <div id="stars-container"></div>
+  <nav>
+    <div class="navbar-logo">
+      <img src="https://placehold.co/30x30" alt="Logo">
+      <span class="navbar-logo-text">ATLANTIS</span>
+    </div>
+    <div class="navbar-links">
+      <a onclick="smoothScrollTo('features')">Features</a>
+      <a onclick="smoothScrollTo('showcase')">Showcases</a>
+      <div class="discord-button"><i class="fab fa-discord"></i> Discord</div>
+    </div>
+  </nav>
 
-    <div class="navbar-spacing"></div>
-    <nav class="navbar">
-        <div class="flex items-center">
-            <img src="https://cdn.discordapp.com/icons/1150872929731620987/e07490a56175793f93a84fcb5376bec2.webp?size=96" alt="Atlantis Logo" class="h-10 w-10 rounded-full">
-            <span class="ml-2 text-2xl font-bold">Atlantis</span>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-            <a href="#">Home</a>
-            <a href="#services">Services</a>
-        </div>
-        <div class="navbar-right hidden lg:flex">
-            <a href="https://discord.gg/hDwPsdka2V" class="btn-contact">Discord</a>
-        </div>
-        <button class="lg:hidden flex flex-col space-y-1" id="navbar-toggle">
-            <span class="block h-1 w-6 bg-white"></span>
-            <span class="block h-1 w-6 bg-white"></span>
-            <span class="block h-1 w-6 bg-white"></span>
-        </button>
-        <div class="hidden flex-col items-center space-y-3 lg:hidden" id="navbar-menu">
-            <a href="#">Home</a>
-            <a href="#services">Services</a>
-            <a href="https://discord.gg/hDwPsdka2V" class="btn-contact">Contact Us</a>
-        </div>
-    </nav>
+  <div class="update-banner">
+    <span>Website has been updated with new features.</span>
+    <span class="close-btn" onclick="this.parentElement.style.display='none'">✕</span>
+  </div>
 
-    <section class="flex flex-col md:flex-row items-center py-20 px-6 main-content-spacing" style="position: relative; z-index: 2;">
-        <div class="text-center md:text-left md:w-1/2 mb-6 md:mb-0">
-            <h1 class="text-4xl font-bold mb-4">A Roblox Executor for Safe and Efficient Script Execution</h1>
-            <p class="text-xl mb-6 description" style="color: var(--light-gray);">With bypassed Hyperon 5.0, safe injections, and a supportive community, Atlantis offers top-notch moderation and script execution.</p>
-            <div class="mb-6">
-                <a href="https://link-center.net/427516/atlantis-roblox-exploit" class="bg-red-600 text-white px-6 py-2 rounded-full mr-4">Get Now</a>
-            </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center showcase-spacing">
-            <img src="executor.png" alt="Roblox Executor Interface" class="rounded-lg showcase-img" style="z-index: 2;">
-        </div>
-    </section>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>The Most Advanced <span>Roblox Executor</span> on the Market</h1>
+      <p>Experience the highest level of undetected Roblox and CS2 exploits, offering unbeatable stability and features for your needs.</p>
+      <button>Discover Plans</button>
+    </div>
+    <div class="hero-image"></div>
+  </section>
 
-    <section id="services" class="services-spacing" style="position: relative; z-index: 2;">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Services</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="text-center service-card">
-                    <i class="fas fa-briefcase fa-3x text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">Safe and Secure</h3>
-                    <p class="description" style="color: var(--light-gray);">Our executor ensures safe and secure script execution, keeping your account protected at all times.</p>
-                </div>
-                <div class="text-center service-card">
-                    <i class="fas fa-building fa-3x text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">Bypassed Hyperon 5.0</h3>
-                    <p class="description" style="color: var(--light-gray);">Experience seamless script execution with our advanced Hyperon 5.0 bypass.</p>
-                </div>
-                <div class="text-center service-card">
-                    <i class="fas fa-cogs fa-3x text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">Efficient Injection</h3>
-                    <p class="description" style="color: var(--light-gray);">Our efficient injection methods guarantee quick and reliable performance.</p>
-                </div>
-                <div class="text-center service-card">
-                    <i class="fas fa-users fa-3x text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">Community Support</h3>
-                    <p class="description" style="color: var(--light-gray);">Join a thriving community of users and get support whenever you need it.</p>
-                </div>
-                <div class="text-center service-card">
-                    <i class="fas fa-shield-alt fa-3x text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">Top-notch Moderation</h3>
-                    <p class="description" style="color: var(--light-gray);">Our community is well-moderated to ensure a safe and friendly environment for all users.</p>
-                </div>
-                <div class="text-center service-card">
-                    <i class="fas fa-rocket fa-3x text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color: var(--accent-color);">High Performance</h3>
-                    <p class="description" style="color: var(--light-gray);">Atlantis provides high performance script execution for all your needs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="red-divider"></div>
 
-    <section class="vision-spacing" style="position: relative; z-index: 2;">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center mb-12">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2L2 12h3v7h7v3l10-10H17V5h-5V2z"/>
-                </svg>
-            </div>
-        </div>
-    </section>
+  <section class="cta">
+    <h2>Start Dominating Large Games Today</h2>
+    <p>Join Atlantis and unlock powerful game scripts with top-notch security.</p>
+    <button>Get Started</button>
+  </section>
 
-    <script>
-        function adjustLayout() {
-            const navbar = document.querySelector('.navbar');
-            const sections = document.querySelectorAll('section');
-            const navbarWidth = navbar.offsetWidth;
-            const navbarSpacing = getComputedStyle(document.documentElement).getPropertyValue('--navbar-spacing');
-            const mainContentSpacing = getComputedStyle(document.documentElement).getPropertyValue('--main-content-spacing');
-            const screenshotSpacing = getComputedStyle(document.documentElement).getPropertyValue('--screenshot-spacing');
-            const servicesSpacing = getComputedStyle(document.documentElement).getPropertyValue('--services-spacing');
-            const visionSpacing = getComputedStyle(document.documentElement).getPropertyValue('--vision-spacing');
+  <section id="features" class="features">
+    <div class="feature-card">
+      <h3>Hyperion Bypass</h3>
+      <p>Our Exploit Provides a good Hyperion Bypass to ensure you play without detection!</p>
+    </div>
+    <div class="feature-card">
+      <h3>Quality of Execution</h3>
+      <p>The Exploit is carefully coded to fit your needs with high execution power!</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cool Discord Community!</h3>
+      <p>Join our Discord to hang out and connect with others!</p>
+    </div>
+  </section>
 
-            sections.forEach(section => {
-                section.style.maxWidth = `${navbarWidth}px`;
-                section.style.margin = '0 auto';
-            });
+  <section id="showcase" class="showcase">
+    <div class="showcase-content">
+      <video class="video-player" controls>
+        <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
 
-            document.querySelector('.navbar-spacing').style.marginBottom = navbarSpacing;
-            document.querySelector('.main-content-spacing').style.marginBottom = mainContentSpacing;
-            document.querySelector('.showcase-spacing').style.marginBottom = screenshotSpacing;
-            document.querySelector('.services-spacing').style.marginBottom = servicesSpacing;
-            document.querySelector('.vision-spacing').style.marginBottom = visionSpacing;
-        }
+  <section class="contributors">
+    <h3>Contributors</h3>
+    <div class="contributors-list">
+      <div class="showcase-button"><i class="fas fa-chevron-left"></i></div>
+      <span class="user-name">Contributor 1</span>
+      <div class="showcase-button"><i class="fas fa-chevron-right"></i></div>
+    </div>
+  </section>
 
-        function smoothScroll(event) {
-            event.preventDefault();
-            const targetId = event.currentTarget.getAttribute("href");
-            const targetElement = document.querySelector(targetId);
-            window.scrollTo({
-                top: targetElement.offsetTop - (window.innerHeight / 2) + (targetElement.offsetHeight / 2),
-                behavior: "smooth"
-            });
-        }
+  <script>
+    document.querySelector('.hero-image').addEventListener('mousemove', function(e) {
+        const rect = e.target.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        e.target.style.setProperty('--mouse-x', `${x / rect.width - 0.5}`);
+        e.target.style.setProperty('--mouse-y', `${y / rect.height - 0.5}`);
+    });
 
-        function createStars() {
-            const starsContainer = document.getElementById('stars-container');
-            const starCount = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--star-count'));
-            const starsFragment = document.createDocumentFragment();
+    // Smooth scroll function
+    function smoothScrollTo(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.width = "3.7px";
-                star.style.height = "3.7px";
-
-                let isValidPosition = false;
-                while (!isValidPosition) {
-                    star.style.top = `${Math.random() * document.body.scrollHeight}px`;
-                    star.style.left = `${Math.random() * window.innerWidth}px`;
-
-                    const starRect = star.getBoundingClientRect();
-                    const restrictedAreas = document.querySelectorAll('.text-center, .service-card, img, .navbar');
-
-                    isValidPosition = Array.from(restrictedAreas).every(area => {
-                        const areaRect = area.getBoundingClientRect();
-                        return !(
-                            starRect.top < areaRect.bottom &&
-                            starRect.bottom > areaRect.top &&
-                            starRect.left < areaRect.right &&
-                            starRect.right > areaRect.left
-                        );
-                    });
-                }
-
-                star.style.animation = `twinkle ${Math.random() * 5 + 5}s infinite alternate`;
-                starsFragment.appendChild(star);
+    // Background effect with white glowing stars inside the viewport
+    function addBackgroundElements(elementClass, numElements) {
+        const body = document.body;
+        for (let i = 0; i < numElements; i++) {
+            const element = document.createElement('div');
+            element.className = elementClass;
+            element.style.left = `${Math.random() * 100}vw`;
+            element.style.top = `${Math.random() * window.innerHeight}px`;
+            if (elementClass === 'glow-star') {
+                element.style.width = `${Math.random() * 3 + 1}px`;
+                element.style.height = element.style.width;
+                element.style.background = 'rgba(255, 255, 255, 0.6)';
+                element.style.filter = 'blur(1px)';
+            } else if (elementClass === 'glow-sphere') {
+                element.style.width = `${Math.random() * 150 + 50}px`;
+                element.style.height = element.style.width;
+                element.style.background = 'rgba(255, 255, 255, 0.2)';
+                element.style.filter = 'blur(50px)';
             }
-
-            starsContainer.appendChild(starsFragment);
+            body.appendChild(element);
         }
+    }
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', smoothScroll);
-        });
+    addBackgroundElements('glow-star', 70);
+    addBackgroundElements('glow-sphere', 10);
 
-        document.getElementById('navbar-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('navbar-menu');
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.display = 'flex';
-            } else {
-                menu.style.display = 'none';
-            }
-        });
+    const contributors = ["Contributor 1", "Contributor 2", "Contributor 3", "Contributor 4"];
+    let currentContributorIndex = 0;
 
-        window.addEventListener('resize', adjustLayout);
-        window.addEventListener('load', () => {
-            adjustLayout();
-            createStars();
-        });
+    function updateContributor(direction) {
+        currentContributorIndex = (currentContributorIndex + direction + contributors.length) % contributors.length;
+        document.querySelector('.user-name').textContent = contributors[currentContributorIndex];
+    }
 
-    </script>
+    document.querySelector('.contributors .fa-chevron-left').onclick = () => updateContributor(-1);
+    document.querySelector('.contributors .fa-chevron-right').onclick = () => updateContributor(1);
+  </script>
 </body>
 </html>
