@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlantis</title>
+    <title>DEXUS</title>
     <link rel="icon" href="https://cdn.discordapp.com/icons/1150872929731620987/e07490a56175793f93a84fcb5376bec2.webp?size=96" type="image/webp">
-    <meta name="theme-color" content="#e03326">
-    <meta property="og:title" content="Atlantis (1# UD)">
+    <meta name="theme-color" content="#888">
+    <meta property="og:title" content="DEXUS (1# UD)">
     <meta property="og:description" content="Unleash havoc with the best scripting experience.">
     <meta property="og:image" content="https://cdn.discordapp.com/icons/1150872929731620987/e07490a56175793f93a84fcb5376bec2.webp?size=96">
     <meta property="og:url" content="https://getsatlantis.vercel.app">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:site_name" content="Atlantis">
-    <meta name="twitter:image:alt" content="Atlantis Logo">
+    <meta property="og:site_name" content="DEXUS">
+    <meta name="twitter:image:alt" content="DEXUS Logo">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -29,7 +29,7 @@
         margin: 0;
         overflow-x: hidden;
         scrollbar-width: thin;
-        scrollbar-color: #ff0040 #222;
+        scrollbar-color: #888 #222;
     }
 
     ::-webkit-scrollbar {
@@ -41,7 +41,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: #ff0040;
+        background-color: #888;
         border-radius: 4px;
     }
 
@@ -69,9 +69,9 @@
     .navbar-logo-text {
         font-family: 'Orbitron', sans-serif;
         font-size: 1.5rem;
-        color: #ff0040;
+        color: #888;
         font-weight: bold;
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        text-shadow: 0 0 10px rgba(136, 136, 136, 0.7);
     }
 
     .navbar-links {
@@ -88,7 +88,7 @@
     }
 
     .navbar-links a:hover {
-        color: #ff0040;
+        color: #888;
     }
 
     .discord-button {
@@ -112,13 +112,13 @@
         left: 50%;
         transform: translateX(-50%);
         padding: 8px 20px;
-        background: rgba(255, 0, 0, 0.1);
+        background: rgba(136, 136, 136, 0.1);
         color: #fff;
         border-radius: 20px;
         font-size: 0.875rem;
         font-weight: 700;
         text-align: center;
-        box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+        box-shadow: 0 4px 20px rgba(136, 136, 136, 0.2);
         animation: banner-glow 3s ease-in-out infinite alternate;
         display: flex;
         align-items: center;
@@ -132,8 +132,8 @@
     }
 
     @keyframes banner-glow {
-        from { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); }
-        to { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4); }
+        from { box-shadow: 0 4px 20px rgba(136, 136, 136, 0.2); }
+        to { box-shadow: 0 4px 20px rgba(136, 136, 136, 0.4); }
     }
 
     .hero {
@@ -158,8 +158,8 @@
     }
 
     .hero h1 span {
-        color: #ff0040;
-        text-shadow: 0px 0px 10px #ff0040;
+        color: #888;
+        text-shadow: 0px 0px 10px #888;
     }
 
     .hero p {
@@ -173,21 +173,21 @@
         padding: 12px 30px;
         font-size: 1rem;
         border-radius: 30px;
-        background: rgba(255, 0, 0, 0.3);
+        background: rgba(136, 136, 136, 0.3);
         border: 1px solid #666;
         color: #fff;
         transition: all 0.3s;
     }
 
     .hero button:hover {
-        background: rgba(255, 0, 0, 0.5);
-        border-color: rgba(255, 0, 0, 0.7);
+        background: rgba(136, 136, 136, 0.5);
+        border-color: rgba(136, 136, 136, 0.7);
     }
 
     .hero-image {
         width: 650px;
         height: 350px;
-        background-image: url('AtlantisUI.png');
+        background-image: url('DexusUI.png');
         background-size: cover;
         background-position: center;
         border-radius: 20px;
@@ -196,14 +196,14 @@
     }
 
     .hero-image:hover {
-        box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.5);
+        box-shadow: 0px 4px 15px rgba(136, 136, 136, 0.5);
         transform: rotateY(calc(var(--mouse-x, 0) * 15deg)) rotateX(calc(var(--mouse-y, 0) * -15deg));
     }
 
-    .red-divider {
+    .gray-divider {
         width: 80%;
         height: 2px;
-        background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1) 20%, rgba(255, 0, 0, 1) 80%, rgba(255, 0, 0, 0));
+        background: linear-gradient(90deg, rgba(136, 136, 136, 0), rgba(136, 136, 136, 1) 20%, rgba(136, 136, 136, 1) 80%, rgba(136, 136, 136, 0));
         margin: 0 auto 40px;
     }
 
@@ -222,9 +222,9 @@
     .cta h2 {
         font-size: 2rem;
         font-family: 'Raleway', sans-serif;
-        color: #ff0040;
+        color: #888;
         font-weight: 900;
-        text-shadow: 0px 0px 5px #ff0040;
+        text-shadow: 0px 0px 5px #888;
     }
 
     .cta p {
@@ -273,7 +273,7 @@
     }
 
     .feature-card h3 {
-        color: #ff0040;
+        color: #888;
         font-size: 1.25rem;
         font-family: 'Raleway', sans-serif;
         margin-bottom: 10px;
@@ -305,7 +305,7 @@
   <nav>
     <div class="navbar-logo">
       <img src="logos.png" alt="Logo">
-      <span class="navbar-logo-text">ATLANTIS</span>
+      <span class="navbar-logo-text">DEXUS</span>
     </div>
     <div class="navbar-links">
       <a onclick="smoothScrollTo('features')">Features</a>
@@ -328,11 +328,11 @@
     <div class="hero-image"></div>
   </section>
 
-  <div class="red-divider"></div>
+  <div class="gray-divider"></div>
 
   <section class="cta">
     <h2>Start Dominating Large Games Today</h2>
-    <p>Join Atlantis and unlock powerful game scripts with top-notch security.</p>
+    <p>Join DEXUS and unlock powerful game scripts with top-notch security.</p>
     <button>Get Started</button>
   </section>
 
@@ -369,12 +369,10 @@
         e.target.style.setProperty('--mouse-y', `${y / rect.height - 0.5}`);
     });
 
-    // Smooth scroll function
     function smoothScrollTo(id) {
         document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // Background effect with white glowing stars inside the viewport
     function addBackgroundElements(elementClass, numElements) {
         const body = document.body;
         for (let i = 0; i < numElements; i++) {
